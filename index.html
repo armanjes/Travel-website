@@ -13,9 +13,9 @@
     <!-- slick -->
     <link rel="stylesheet" href="./js/slick-1.8.1/slick/slick-theme.css" />
     <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
     <!-- style -->
     <link rel="stylesheet" href="./css/style.css" />
     <title>Travel</title>
@@ -27,11 +27,10 @@
         <button
           class="navbar-toggler bg-light"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -63,21 +62,109 @@
         </div>
         <!--  -->
         <div class="icons">
-          <ul class="d-flex align-items-center gap-3">
-            <li class="nav-item">
-              <a href="#" class="nav-link fw-semibold text-white">
-                <i class="fas fa-search" id="search-btn"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link fw-semibold text-white">
-                <i class="fas fa-user" id="user"></i>
-              </a>
-            </li>
-          </ul>
+          <i
+            class="fas fa-search text-light fs-6 me-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          ></i>
+          <i
+            class="fas fa-user text-light fs-6"
+            type="button"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"
+          ></i>
         </div>
       </div>
     </nav>
+
+    <!-- search from -->
+    <div class="collapse" id="collapseExample">
+      <form class="w-75 mx-auto">
+        <input
+          class="form-control mt-1 border-primary-subtle"
+          type="search"
+          placeholder="search..."
+        />
+      </form>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h1 class="modal-title fs-5 text-center mb-3" id="exampleModalLabel">Login</h1>
+            <form>
+              <input class="form-control mb-2" type="email" placeholder="enter email">
+              <input class="form-control" type="email" placeholder="enter password?">
+            </form>
+          </div>
+          <div class="modal-footer me-auto border-top-0">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Login
+            </button>
+            <p class="text-danger">Forgot password?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- side menu offcanvas -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Book</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Packages</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Services</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Review</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- booking section -->
     <section class="container py-5">
@@ -126,11 +213,7 @@
                 <option value="">gift card</option>
               </select>
             </div>
-            <input
-              type="submit"
-              value="Book now"
-              class="btn btn-blue"
-            />
+            <input type="submit" value="Book now" class="btn btn-blue" />
           </form>
         </div>
       </div>
@@ -158,7 +241,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -184,7 +267,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -214,7 +297,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -240,7 +323,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -270,7 +353,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -300,7 +383,7 @@
                 <i class="fas fa-star"></i>
               </div>
               <div class="my-1">
-                $90.00 <span class="text-decoration-line-through">$130.00</span>
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
               </div>
               <button href="#" class="btn btn-blue">Book Now</button>
             </div>
@@ -427,138 +510,138 @@
     <!-- review section -->
     <section class="container py-5">
       <div class="row g-3">
-        <div class="col-lg-12  review-slider">
+        <div class="col-lg-12 review-slider">
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
-          </div>
-          <div class="px-2 pt-5">
-            <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
-            </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
-          </div>
           </div>
           <div class="px-2 pt-5">
             <div class="review-box p-2 rounded mb-5">
-            <div style="margin-bottom: 50px">
-              <img src="./images/user.png" class="reviewer-img" alt="" />
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
             </div>
-            <h6 class="my-1 text-center">John Doe</h6>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-              culpa nemo distinctio dignissimos nihil?
-            </p>
           </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -622,16 +705,16 @@
           <!--  -->
           <div class="col-sm-6 col-md-4 col-lg-3">
             <h4>Follow us</h4>
-            <a href="#" class="nav-link">
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
               <i class="fab fa-facebook"></i>
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
               <i class="fab fa-youtube"></i>
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
               <i class="fab fa-twitter"></i>
             </a>
           </div>
@@ -647,8 +730,8 @@
     <script src="./js/bootstrap.js"></script>
     <!-- slick jquery -->
     <script
-    type="text/javascript"
-    src="//code.jquery.com/jquery-1.11.0.min.js"
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
     ></script>
     <!-- slick js -->
     <script src="./js/slick-1.8.1/slick/slick.min.js"></script>
